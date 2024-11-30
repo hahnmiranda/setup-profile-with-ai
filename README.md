@@ -1,0 +1,1 @@
+# Setup profile whith AI
