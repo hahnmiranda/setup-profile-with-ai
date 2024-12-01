@@ -1,0 +1,6 @@
+Dada uma variável de nome "isComptime" do tipo booleana que define se uma pessoa pode fazer banco de horas, utilize a regra a seguir para determinar o valor dessa variável:
+
+O Colaborador Guilherme, pode fazer banco de horas.
+
+
+Qual valor deve possuir a variável "isComptime" (devolva a resposta no formato json)?

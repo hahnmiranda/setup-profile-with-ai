@@ -35,3 +35,7 @@ out/
 
 ### VS Code ###
 .vscode/
+
+### Testes locais ###
+application-local.properties
+.env

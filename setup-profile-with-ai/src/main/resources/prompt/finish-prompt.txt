@@ -1,0 +1,1 @@
+Qual valor deve possuir a variável "isComptime" (devolva a resposta no formato json)?

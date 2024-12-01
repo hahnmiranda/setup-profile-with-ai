@@ -1,6 +1,6 @@
 package com.profile.setupprofilewithai.controllers;
 
-import com.profile.setupprofilewithai.services.TranscriptionService;
+import com.profile.setupprofilewithai.service.TranscriptionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -10,13 +10,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-
 @RestController
-@RequestMapping("/api/transcription/v1")
+@RequestMapping("/api/transcription")
 public class TranscriptionController {
 
     @Autowired
@@ -25,23 +20,8 @@ public class TranscriptionController {
     @PostMapping("/extract-text")
     public ResponseEntity<String> extractTextFromPdf(@RequestParam("file") MultipartFile file) {
         try {
-            // Salva o arquivo temporariamente
-            File tempFile = File.createTempFile("uploaded-", ".pdf");
-            file.transferTo(tempFile);
-
-            // Extrai o texto usando o serviço
-            String extractedText = service.extractTextFromPdf(tempFile);
-
-            // Adiciona o prompt ao conteúdo do pdf
-            extractedText = service.addPrompt(extractedText);
-
-            service.saveContentOnTxt(extractedText, file);
-
-            // Exclui o arquivo temporário
-            tempFile.delete();
-
-            return ResponseEntity.ok(extractedText);
-        } catch (IOException e) {
+            return ResponseEntity.ok(service.gptAnswerByPrompt(file));
+        } catch (Exception e) {
             e.printStackTrace();
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body("Erro ao processar o arquivo PDF: " + e.getMessage());

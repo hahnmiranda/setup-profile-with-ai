@@ -1,1 +1,0 @@
-Devolva um valor que seja a soma do prompt com o texto extraído do pdf.
