@@ -1,0 +1,1 @@
+INSERT INTO `transcription` VALUES (1,1,'2024-12-01 14:24:19.648000',1,'43628a23b4e3776542866663da307893','/home/gui-ubu/Documents/git/setup-profile-with-ai/setup-profile-with-ai/src/main/resources/output/Teste');

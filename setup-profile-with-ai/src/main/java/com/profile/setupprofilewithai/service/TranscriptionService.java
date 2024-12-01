@@ -15,6 +15,8 @@ import java.nio.file.Paths;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.List;
+import jakarta.json.bind.Jsonb;
+import jakarta.json.bind.JsonbBuilder;
 
 @Service
 public class TranscriptionService {
@@ -71,6 +73,9 @@ public class TranscriptionService {
                 }).map(Transcription::getFileName).findFirst().orElse("");
 
         File answerContent = ResourceUtils.getFile(name + "-answer.txt");
+
+        Jsonb jsonb = JsonbBuilder.create();
+//        User user = jsonb.fromJson(json, User.class);
 
         return new String(Files.readAllBytes(Paths.get(answerContent.getPath())));
     }

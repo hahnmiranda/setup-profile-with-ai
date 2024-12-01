@@ -30,6 +30,9 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.hibernate:hibernate-core:6.2.0.Final'
 	implementation 'mysql:mysql-connector-java:8.0.33'
+	implementation 'org.flywaydb:flyway-core'
+	implementation 'org.flywaydb:flyway-mysql'
+
 
 	// python on java
 	implementation 'black.ninia:jep:4.1.1'
@@ -43,6 +46,11 @@ dependencies {
 	// opcional para simplificar o uso de hashes
 	implementation 'commons-codec:commons-codec:1.16.0'
 
+	// json em objeto
+	implementation 'jakarta.json:jakarta.json-api:2.0.1'
+	implementation 'org.glassfish:jakarta.json:2.0.1'
+	implementation 'org.eclipse:yasson:3.0.2'
+
 	// test
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.junit.jupiter:junit-jupiter:5.10.0'
@@ -53,4 +61,8 @@ dependencies {
 
 tasks.named('test') {
 	useJUnitPlatform()
+}
+
+test {
+	systemProperty "spring.profiles.active", "test"
 }
