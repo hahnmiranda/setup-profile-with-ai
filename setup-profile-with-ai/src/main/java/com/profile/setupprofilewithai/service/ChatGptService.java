@@ -44,6 +44,21 @@ public class ChatGptService {
             return "Erro: Mensagem retornada pela API está vazia.";
         }
 
+        // testApi(request, question);
+
         return choice.getMessage().getContent();
+    }
+
+    private void testApi(ChatGptRequest request, String question) {
+        String rawResponse = webClient.post()
+                .uri(apiUrl)
+                .header("Authorization", "Bearer " + apiKey)
+                .header("Content-Type", "application/json")
+                .bodyValue(request)
+                .retrieve()
+                .bodyToMono(String.class)
+                .block();
+
+        System.out.println("Resposta bruta da API: " + rawResponse);
     }
 }
