@@ -6,9 +6,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
-import java.util.Collections;
-import java.util.Objects;
-
 @Service
 public class ChatGptService {
     private final WebClient webClient;
@@ -44,7 +41,7 @@ public class ChatGptService {
             return "Erro: Mensagem retornada pela API está vazia.";
         }
 
-        // testApi(request, question);
+         // testApi(request, question);
 
         return choice.getMessage().getContent();
     }
