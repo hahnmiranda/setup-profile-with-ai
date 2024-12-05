@@ -39,6 +39,3 @@ out/
 ### Testes locais ###
 src/test/resources/application-test.properties
 .env
-
-### Arquivos anexos ###
-*.txt
