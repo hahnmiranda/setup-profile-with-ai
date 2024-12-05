@@ -174,6 +174,6 @@ public class TranscriptionService {
 
         String projectPath = Paths.get("").toAbsolutePath().toString();
 
-        return projectPath + "/setup-profile-with-ai/src/main/resources/output/" + originalFilename.substring(0, lastDotIndex);
+        return projectPath + "/src/main/resources/output/" + originalFilename.substring(0, lastDotIndex);
     }
 }
