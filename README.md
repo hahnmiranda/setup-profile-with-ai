@@ -30,6 +30,6 @@ Para importar o projeto, abra-o a partir do arquivo build.gradle e antes de sua 
 
 ## 🔗 Instruções de uso
 
-Para acessar os endpoints, aós buildar o projeto, basta importar no postman a coleção disponibilizada no repositório. Selecione a aba "Body" e adicione uma "Key" de nome `file`. Ela deve ser do tipo "File" e selecione um arquivo do tipo ".pdf" na sessão "Value".
+Para acessar os endpoints, após buildar o projeto, basta importar no postman a coleção disponibilizada no repositório. Selecione a aba "Body" e adicione uma "Key" de nome `file`. Ela deve ser do tipo "File" e selecione um arquivo do tipo ".pdf" na sessão "Value".
 
 
